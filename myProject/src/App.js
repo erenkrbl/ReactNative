@@ -3,7 +3,7 @@ import {Text, View, StyleSheet} from 'react-native';
 import MyComponent from './components/MyComponent';
 
 const App = () => {
-  const isAdmin = true;
+  // const isAdmin = true;
 
   // function myFunction() {
   //   return (
@@ -28,9 +28,17 @@ const App = () => {
   //   return isAdmin ? <Text>User Admin</Text> : null;
   // }
   
-  function nameFunction(username){
-    return <Text>{username}</Text>
+  // function nameFunction(username){
+  //   return <Text>{username}</Text>
+  // }
+
+  function arryFunction (){
+    const myArray = ['İzmir', 'Erzincan', 'Ankara'];
+    return myArray.map((city) => {
+      return <Text>{city}</Text>
+    });
   }
+
   return (
     <View >
       <View style={styles.container}>
@@ -42,7 +50,8 @@ const App = () => {
       {/* {myFunction()} */}
       {/* {ourFunction()} */}
       {/* {yourFunction()} */}
-      {nameFunction("Arthur King")}
+      {/* {nameFunction("Arthur King")} */}
+      {arryFunction()}
       {/* {isAdmin ? <Text>User Admin</Text> : null} */}
       {/* {isAdmin && <Text style={{fontSize:30}}>User Admin</Text>} */}
     </View>
