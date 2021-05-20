@@ -5,13 +5,22 @@ import MyComponent from './components/MyComponent';
 const App = () => {
   const myName = "Arthur"
 
-  function myFunction() {
-    return (
-      <View>
-        <Text>Hello Everbody</Text>
-        <Text>Hello My Friends</Text>
-      </View>
-    )
+  // function myFunction() {
+  //   return (
+  //     <View>
+  //       <Text>Hello Everbody</Text>
+  //       <Text>Hello My Friends</Text>
+  //     </View>
+  //   )
+  // }
+
+  function ourFunction(){
+    const isAdmin = false;
+    if(isAdmin){
+      return <Text>User Admin</Text>
+    } else {
+      return <Text>User Customor</Text>
+    }
   }
   return (
     <View >
@@ -21,7 +30,8 @@ const App = () => {
         </Text>
       </View>
       <MyComponent/>
-      {myFunction()}
+      {/* {myFunction()} */}
+      {ourFunction()}
     </View>
   )
 };
