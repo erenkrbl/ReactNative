@@ -3,7 +3,7 @@ import {Text, View, StyleSheet} from 'react-native';
 import MyComponent from './components/MyComponent';
 
 const App = () => {
-  const myName = "Arthur"
+  const isAdmin = true;
 
   // function myFunction() {
   //   return (
@@ -23,10 +23,10 @@ const App = () => {
   //   }
   // }
 
-  function yourFunction(){
-    const isAdmin = true;
-    return isAdmin ? <Text>User Admin</Text> : null;
-  }      
+  // function yourFunction(){
+  //   const isAdmin = true;
+  //   return isAdmin ? <Text>User Admin</Text> : null;
+  // }      
   return (
     <View >
       <View style={styles.container}>
@@ -36,7 +36,10 @@ const App = () => {
       </View>
       <MyComponent/>
       {/* {myFunction()} */}
-      {yourFunction()}
+      {/* {ourFunction()} */}
+      {/* {yourFunction()} */}
+      {/* {isAdmin ? <Text>User Admin</Text> : null} */}
+      {isAdmin && <Text style={{fontSize:30}}>User Admin</Text>}
     </View>
   )
 };
