@@ -14,14 +14,19 @@ const App = () => {
   //   )
   // }
 
-  function ourFunction(){
-    const isAdmin = false;
-    if(isAdmin){
-      return <Text>User Admin</Text>
-    } else {
-      return <Text>User Customor</Text>
-    }
-  }
+  // function ourFunction(){
+  //   const isAdmin = false;
+  //   if(isAdmin){
+  //     return <Text>User Admin</Text>
+  //   } else {
+  //     return <Text>User Customor</Text>
+  //   }
+  // }
+
+  function yourFunction(){
+    const isAdmin = true;
+    return isAdmin ? <Text>User Admin</Text> : null;
+  }      
   return (
     <View >
       <View style={styles.container}>
@@ -31,7 +36,7 @@ const App = () => {
       </View>
       <MyComponent/>
       {/* {myFunction()} */}
-      {ourFunction()}
+      {yourFunction()}
     </View>
   )
 };
