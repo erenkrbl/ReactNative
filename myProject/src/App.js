@@ -26,7 +26,11 @@ const App = () => {
   // function yourFunction(){
   //   const isAdmin = true;
   //   return isAdmin ? <Text>User Admin</Text> : null;
-  // }      
+  // }
+  
+  function nameFunction(username){
+    return <Text>{username}</Text>
+  }
   return (
     <View >
       <View style={styles.container}>
@@ -38,8 +42,9 @@ const App = () => {
       {/* {myFunction()} */}
       {/* {ourFunction()} */}
       {/* {yourFunction()} */}
+      {nameFunction("Arthur King")}
       {/* {isAdmin ? <Text>User Admin</Text> : null} */}
-      {isAdmin && <Text style={{fontSize:30}}>User Admin</Text>}
+      {/* {isAdmin && <Text style={{fontSize:30}}>User Admin</Text>} */}
     </View>
   )
 };
