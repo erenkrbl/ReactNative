@@ -1,10 +1,30 @@
 
 import React from 'react';
-import { SafeAreaView, View, StyleSheet, Text, TextInput} from 'react-native';
+import { 
+  SafeAreaView, 
+  View, 
+  StyleSheet, 
+  Text, 
+  TextInput,
+  Platform
+} from 'react-native';
 
 
 
 const App = () => {
+  function sayHello(){
+    const platform = Platform.OS;
+    const version = Platform.Version;
+  
+    if (platform === 'ios')
+      return (
+        <Text>Hello to İphone {version}</Text>
+      );
+    else
+      return (
+        <Text>Hello to Anroid {version}</Text>
+      );
+  }
   return (
     <SafeAreaView style={{flex:1}}>
       <View style={styles.container}>
@@ -14,6 +34,8 @@ const App = () => {
             placeholder="Search" 
           />
         </View>
+        {/* <Text style={{fontSize: 40}}>Cihaz: {platform}</Text> */}
+        {sayHello()}
       </View>
       {/* <View style={{flex:1, backgroundColor: 'gray'}}/> */}
     </SafeAreaView>
