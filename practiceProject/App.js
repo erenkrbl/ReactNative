@@ -15,9 +15,7 @@ const App = () => {
     <SafeAreaView style={{flex:1}}>
       <View style={styles.container}>
         <Text style={[styles.text, {color: 'rgb(170, 71, 126)'}]}>Clarusway</Text>
-        <Text style={styles.text}>Components</Text>
-        
-          
+        <Text style={styles.text}>Components</Text> 
       </View>
     </SafeAreaView>
   );
