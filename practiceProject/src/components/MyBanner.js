@@ -2,13 +2,6 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
 const MyBanner = (props) => {
-    // function checkedActiveStatus(){
-    //     if(!props.isActive){
-    //         return <Text>Not active</Text>
-    //     }else{
-    //         return null;
-    //     }
-    // }
 
     return (
         <View style={[styles.container, {backgroundColor: props.color}]}>
@@ -17,7 +10,7 @@ const MyBanner = (props) => {
                     <Text style={styles.text}>{props.title}</Text>
                     <Text>{props.desc}</Text>
                 </View>
-                {props.isActive? null: <Text>Not active</Text>}
+                {(!props.isActive) && <Text>Not active</Text>}
             </View>
         </View>
     );
