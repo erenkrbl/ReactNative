@@ -10,8 +10,24 @@ const App = () => {
   return (
     <SafeAreaView style={{flex:1}}>
       <View>
-        <Text>Hello React Native</Text>
-        <MyBanner />
+        <MyBanner 
+          title= "Soups"
+          desc= "Delicious dishes"
+        />
+         <MyBanner 
+          title= "Main Courses"
+          desc= "Hearty flavors"
+        />
+         <MyBanner 
+          title= "İntermediate meals"
+          desc= "Delicious apparatus"
+        />
+        
+         <MyBanner 
+          title= "Salads"
+          desc= "Refresh salads"
+        />
+
       </View>
     </SafeAreaView>
   );
