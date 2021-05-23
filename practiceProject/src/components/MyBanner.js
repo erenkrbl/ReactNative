@@ -3,7 +3,7 @@ import {View, Text, StyleSheet} from 'react-native';
 
 const MyBanner = (props) => {
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, {backgroundColor: props.color}]}>
             <Text style={styles.text}>{props.title}</Text>
             <Text>{props.desc}</Text>
         </View>

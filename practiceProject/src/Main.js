@@ -13,19 +13,23 @@ const App = () => {
         <MyBanner 
           title= "Soups"
           desc= "Delicious dishes"
+          color= "#ef5350"
         />
          <MyBanner 
           title= "Main Courses"
           desc= "Hearty flavors"
+          color= "#ffa000"
         />
          <MyBanner 
           title= "İntermediate meals"
           desc= "Delicious apparatus"
+          color= "#64b5f6"
         />
         
          <MyBanner 
           title= "Salads"
           desc= "Refresh salads"
+          color= "#4caf50"
         />
 
       </View>
