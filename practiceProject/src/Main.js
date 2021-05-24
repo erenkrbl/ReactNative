@@ -2,6 +2,7 @@
 import React from 'react';
 import { SafeAreaView, View, Text} from 'react-native';
 import MyBanner from './components/MyBanner';
+import MyButton from './components/MyButton';
 
 const food_data = [
   {
@@ -56,6 +57,10 @@ const App = () => {
             />
           );
         })}
+      <MyButton 
+        buttonTitle="Refresh"
+        
+      />
       </View>
     </SafeAreaView>
   );
