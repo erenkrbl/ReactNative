@@ -12,6 +12,7 @@ const Login = () => {
                 />
                 <Input holder= "Enter your e-mail" />
                 <Input holder= "Enter your password" />
+                <Button title= "Login Page" />
             </View>
         </SafeAreaView>
     )
