@@ -11,6 +11,8 @@ import {
 const myArray = Array.from(Array(1500).keys())
 
 const News = () => {
+
+    const renderData = (data) => <Text style={{fontSize: 30}}>{data.item}</Text>
   return (
     <SafeAreaView style={{flex: 1}}>
         {/* <ScrollView style={{flex: 1}}>
@@ -24,7 +26,7 @@ const News = () => {
 
         <FlatList 
             data= {myArray}
-            renderItem= {(data) => <Text style={{fontSize: 30}}>{data.item}</Text> }
+            renderItem= {renderData}
         />
       
     </SafeAreaView>
