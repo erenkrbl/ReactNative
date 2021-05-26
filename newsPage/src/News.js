@@ -5,7 +5,9 @@ import {
   Text,
   View,
   ScrollView,
-  FlatList
+  FlatList,
+  Image,
+  Dimensions
 } from 'react-native';
 
 import { NewsCard } from "./componets";
@@ -92,12 +94,36 @@ const banner_data = [
 const News = () => {
 
     const renderNewsData = ({item}) => <NewsCard news={item} />
+
+    const listHeader = () => {
+        return (
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                {
+                    banner_data.map((banner_item) => {
+                        return (
+                            <Image
+                                source={{ uri: banner_item.imageUrl }}
+                                style={{
+                                    height: Dimensions.get('window').height / 4,
+                                    width: Dimensions.get('window').width * 0.90,
+                                    borderRadius: 5,
+                                    margin: 5,
+                                }}
+                            />
+                        )
+                    })
+                }
+            </ScrollView>
+        )
+    } 
     return (
         <SafeAreaView style={{flex: 1}}>
+            
             <FlatList
                 keyExtractor={(item, index) => item.id.toString()} 
                 data= {news_data}
                 renderItem= {renderNewsData}
+                ListHeaderComponent = {listHeader}
             />
         </SafeAreaView>
   );
