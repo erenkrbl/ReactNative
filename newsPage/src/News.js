@@ -8,6 +8,8 @@ import {
   FlatList
 } from 'react-native';
 
+import { NewsCard } from "./componets";
+
 const news_data = [
     {
         id: 0,
@@ -89,17 +91,15 @@ const banner_data = [
 
 const News = () => {
 
-    const renderData = (data) => <Text style={{fontSize: 30}}>{data.item}</Text>
-  return (
-    <SafeAreaView style={{flex: 1}}>
-        <FlatList 
-            data= {news_data}
-            renderItem= {({item}) => <Text>{item.title}</Text>} 
-        />
-        
-        
-      
-    </SafeAreaView>
+    const renderNewsData = ({item}) => <NewsCard news={item} />
+    return (
+        <SafeAreaView style={{flex: 1}}>
+            <FlatList
+                keyExtractor={(item, index) => item.id.toString()} 
+                data= {news_data}
+                renderItem= {renderNewsData}
+            />
+        </SafeAreaView>
   );
 };
 
