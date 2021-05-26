@@ -59,7 +59,6 @@ const App = () => {
         })}
       <MyButton 
         buttonTitle="Refresh"
-        
       />
       </View>
     </SafeAreaView>
