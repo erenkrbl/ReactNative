@@ -4,15 +4,22 @@ import {
   StyleSheet,
   Text,
   View,
+  ScrollView
 } from 'react-native';
 
+const myArray = Array.from(Array(1500).keys())
+
 const News = () => {
-  console.log("object")
   return (
     <SafeAreaView style={{flex: 1}}>
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>News Page</Text>
-      </View>
+        <ScrollView style={{flex: 1}}>
+            <View>
+                {
+                    myArray.map(u =><Text>{u}</Text>)
+                }
+                <Text>News Page</Text>
+            </View>
+        </ScrollView>
       
     </SafeAreaView>
   );
