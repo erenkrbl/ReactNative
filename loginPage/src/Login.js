@@ -13,13 +13,13 @@ import {Input, Button} from './components';
 
 const Login = () => {
     return (
-        <SafeAreaView style={{flex: 1}}>
+        <SafeAreaView style={{flex: 1, backgroundColor: '#b2dfdb'}}>
             <KeyboardAvoidingView style={{
                 flex: 1}}
                 behavior= {Platform.OS == "android" ? null : "padding"}    
             >
-                <ScrollView style={{flex: 1, backgroundColor: "red"}} bounces= {false} >
-                    <View style={{flex: 1, backgroundColor: '#b2dfdb'}}>
+                <ScrollView style={{flex: 1}} bounces= {false} >
+                    <View style={{flex: 1}}>
                         <Image 
                             source={require('./assets/cart.png')}
                             style={styles.logoStyle}
