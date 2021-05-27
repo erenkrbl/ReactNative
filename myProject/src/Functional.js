@@ -9,7 +9,7 @@ const App = (props) => {
     return (
         <SafeAreaView>
             <View>
-                <Text style={{fontSize:200, alignSelf: 'center'}}>{counter}</Text>
+                <Text style={{fontSize:80, alignSelf: 'center'}}>Count: {counter}</Text>
                 <Button 
                     title= "UP!"
                     onPress= {updateCounter}
