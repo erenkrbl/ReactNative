@@ -7,8 +7,14 @@ class App extends React.Component{
         this.state= {
             counter: 0
         }
+        console.log("Constructor");
+    }
+
+    componentDidMount (){
+        console.log("componentDidmount");
     }
     render () {
+        console.log("Render");
         return (
             <SafeAreaView>
                 <View>
