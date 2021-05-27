@@ -1,38 +1,27 @@
 import React, {useState, useEffect} from 'react';
-import { SafeAreaView, View, Text, Button } from 'react-native';
+import { SafeAreaView, View, Text, Button, Alert } from 'react-native';
 
 const App = (props) => {
+    const [orderCount, setOrderCount] = useState(0);
 
-    const [counter, setCounter] = useState(0);
-    const [myNumber, setMyNumber] = useState(0);
-    const updateCounter = () => setCounter(counter + 1);
-    
     useEffect(() => {
-        console.log("useEffect")
+        Alert.alert("Clarusway", "Wellcome")
     }, []);
 
     useEffect(() => {
-        console.log("useEffect counter")
-    }, [counter]);
+        if(orderCount > 10) {
+            Alert.alert("Clarusway", "You have choosen more than 10")
+        }
+    }, [orderCount]);
 
-    useEffect(() => {
-        console.log("useEffect myNumber")
-    }, [myNumber])
-
-    console.log("Render");
     return (
         <SafeAreaView>
             <View>
-                <Text style={{fontSize:60, alignSelf: 'center'}}>Count: {counter}</Text>
+                <Text style={{fontSize:60, alignSelf: 'center'}}>Count: {orderCount}</Text>
                 <Button 
-                    title= "UP!"
-                    onPress= {updateCounter}
-                />
-                <Text style={{fontSize:60, alignSelf: 'center'}}>myNumber: {myNumber}</Text>
-                <Button 
-                    title= "Change Number!"
-                    onPress= {()=>setMyNumber(myNumber +1 )}
-                />
+                    title= "Select Order"
+                    onPress= {() => setOrderCount(orderCount + 1)}
+                /> 
             </View>
         </SafeAreaView>
     )
