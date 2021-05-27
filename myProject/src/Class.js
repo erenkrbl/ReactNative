@@ -1,0 +1,19 @@
+import React from 'react';
+import {SafeAreaView, View, Text} from 'react-native';
+
+class App extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    render () {
+        return (
+            <SafeAreaView>
+                <View>
+                    <Text style={{fontSize: 30, fontWeight: 'bold'}}>Hi. Full Stack Class</Text>
+                </View>
+            </SafeAreaView>
+        )
+    }
+}
+
+export default App;
