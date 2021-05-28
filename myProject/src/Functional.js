@@ -1,30 +1,37 @@
 import React, {useState, useEffect} from 'react';
-import { SafeAreaView, View, Text, Button, Alert } from 'react-native';
+import { SafeAreaView, View, Text, TextInput, StyleSheet, Button, Dimensions } from 'react-native';
 
 const App = (props) => {
-    const [orderCount, setOrderCount] = useState(0);
-
-    useEffect(() => {
-        Alert.alert("Clarusway", "Wellcome")
-    }, []);
-
-    useEffect(() => {
-        if(orderCount > 10) {
-            Alert.alert("Clarusway", "You have choosen more than 10")
-        }
-    }, [orderCount]);
-
+   
     return (
-        <SafeAreaView>
-            <View>
-                <Text style={{fontSize:60, alignSelf: 'center'}}>Count: {orderCount}</Text>
-                <Button 
-                    title= "Select Order"
-                    onPress= {() => setOrderCount(orderCount + 1)}
-                /> 
+        <SafeAreaView style={{flex: 1}}>
+            <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
+               <View style={styles.input}>
+                   <TextInput 
+                        placeholder = "Enter your e-mail..."
+                   />
+               </View>
+               <View style={styles.input}>
+                   <TextInput 
+                        placeholder = "Enter your password..."
+                   />
+               </View>
+               <Button 
+                    title= "Login"
+               />
             </View>
         </SafeAreaView>
     )
 }
 
 export default App;
+
+const styles = StyleSheet.create({
+    input: {
+        backgroundColor : '#e3f2fd',
+        padding: 5,
+        margin: 5,
+        borderRadius: 5,
+        width: Dimensions.get('window').width * 0.85
+    }
+})
