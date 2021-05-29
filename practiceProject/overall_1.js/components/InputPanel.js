@@ -6,10 +6,16 @@ const InputPanel = (props) => {
 
     const [inputText, setInputText] = useState("");
 
+    const sendValue = () => {
+        setInputText("");
+        props.sendText(inputText)
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.inputContainer}>
                 <TextInput
+                    value={inputText}
                     onChangeText={value => setInputText(value)} 
                     placeholder="Search..."
                 />
@@ -17,7 +23,7 @@ const InputPanel = (props) => {
             </View>
             <TouchableOpacity 
                 style={styles.buttonContainer}
-                onPress={() => props.sendText(inputText)}
+                onPress={sendValue}
             >
                 <Text style={{textAlign: "center"}}>Choose</Text>
             </TouchableOpacity>
