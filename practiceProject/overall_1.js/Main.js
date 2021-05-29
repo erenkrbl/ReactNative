@@ -1,5 +1,6 @@
 import React from "react";
-import { SafeAreaView, View, Text,TouchableOpacity, StyleSheet } from "react-native";
+import { SafeAreaView, View, Text, StyleSheet } from "react-native";
+import MyButton from "./components/Button";
 
 const App = () => {
     return (
@@ -7,23 +8,9 @@ const App = () => {
             <View>
                 <Text style={{ fontSize: 50 }}>Hello World </Text>
             </View>
-            <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Press Me!</Text>
-            </TouchableOpacity>
+            <MyButton />
         </SafeAreaView>
     )
 }
 
 export default App;
-
-const styles = StyleSheet.create({
-    buttonContainer : {
-        backgroundColor: '#a5d6a7',
-        padding: 15,
-        margin: 10,
-        borderRadius: 5,
-        alignItems: 'center'
-
-
-    }
-})
