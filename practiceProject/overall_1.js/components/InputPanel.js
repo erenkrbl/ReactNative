@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextInput, Text, View, TouchableOpacity, StyleSheet} from "react-native";
 
 
 const InputPanel = (props) => {
+
+    const [inputText, setInputText] = useState("");
+
     return (
         <View style={styles.container}>
             <View style={styles.inputContainer}>
-                <TextInput 
-                    placeholder= "Search..."
+                <TextInput
+                    onChangeText={value => setInputText(value)} 
+                    placeholder="Search..."
                 />
 
             </View>
-            <TouchableOpacity style={styles.buttonContainer}>
+            <TouchableOpacity 
+                style={styles.buttonContainer}
+                onPress={() => props.sendText(inputText)}
+            >
                 <Text style={{textAlign: "center"}}>Choose</Text>
             </TouchableOpacity>
         </View>
@@ -29,7 +36,7 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
         backgroundColor: '#e1f5fe',
-        padding: 10,
+        padding: 5,
         margin: 10,
         borderRadius: 10
         
