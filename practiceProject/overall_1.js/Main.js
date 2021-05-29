@@ -1,6 +1,7 @@
 import React from "react";
 import { SafeAreaView, View, Text, StyleSheet, Alert } from "react-native";
-import Button from "./components/Button";
+// import Button from "./components/Button";
+import InputPanel from "./components/InputPanel";
 
 const App = () => {
 
@@ -12,18 +13,12 @@ const App = () => {
             <View>
                 <Text style={{ fontSize: 50 }}>Hello World </Text>
             </View>
-            <Button 
+            <InputPanel />
+            {/* <Button 
                 title="Press Me!"
                 color="#4dd0e1"
                 sayingHello= {sayHello}
-            />
-            <Button 
-                title="Press Fullstack!"
-                color="#4dd0e1"
-                sayingHello= {() => {
-                    Alert.alert("Clarusway", "Full Stack forever")
-                }}
-            />
+            />          */}
         </SafeAreaView>
     )
 }
