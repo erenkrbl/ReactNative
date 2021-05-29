@@ -7,18 +7,30 @@ import { ProductCard } from "./components"
 
 const App = () => {
     const [searchValue, setSearchValue] = useState("");
+    const [displayList, setDisplayList] = useState([]);
 
     const renderListItem = ({item}) => <ProductCard product={item}/>
 
 
-    // useEffect(() => {
-    //     Alert.alert("Our Shop", "Welcome");
-    // }, []);
+    useEffect(() => {
+        // Alert.alert("Our Shop", "Welcome");
+        setDisplayList(productData)
+    }, []);
+
+    useEffect(() => {
+        const filteredValue = productData.filter(item => {
+            const text = searchValue.toLocaleUpperCase();
+            const productTitle = item.title.toLocaleUpperCase();
+
+            return productTitle.indexOf(text) > -1;
+        })
+        setDisplayList(filteredValue)
+    }, [searchValue])
 
 
     return (
-        <SafeAreaView>
-            <View>
+        <SafeAreaView style={{flex: 1}}>
+            <View style={{flex: 1}}>
                 <Text style={styles.banner}>Our Shop</Text>
                 <View style={styles.searchBar}>
                     <TextInput 
@@ -28,7 +40,7 @@ const App = () => {
                 </View>
                 <FlatList
                     keyExtractor={(item, index) => index.toString()}
-                    data= {productData}
+                    data= {displayList}
                     renderItem= {renderListItem}
                     numColumns={2}
                 />
@@ -36,6 +48,13 @@ const App = () => {
         </SafeAreaView>
     )
 }
+
+/**
+ * todo
+ * 1-stock durumu belirtilecek
+ * 2-seacrh bar component oluşturulacak
+ * <SeaechBar onSearch={....} />
+ */
 
 export default App;
 
