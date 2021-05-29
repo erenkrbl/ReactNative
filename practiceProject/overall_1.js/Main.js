@@ -16,7 +16,7 @@ const App = () => {
             />
             <Button 
                 title="Dont press Me"
-                color="red"
+                color="#4dd0e1"
             />
         </SafeAreaView>
     )

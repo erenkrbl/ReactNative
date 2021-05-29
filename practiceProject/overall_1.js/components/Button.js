@@ -2,8 +2,20 @@ import React from "react";
 import { SafeAreaView, View, TouchableOpacity, Text, StyleSheet  } from "react-native";
 
 const Button = (props) => {
+    // let selectedColor = props.color;
+
+    // if(props.color === undefined){
+    //     selectedColor = "#a5d6a7"
+    // }
+
     return (
-        <TouchableOpacity style={[styles.buttonContainer, {backgroundColor: props.color }]}>
+        <TouchableOpacity style={
+            [
+                styles.buttonContainer, 
+                {
+                    backgroundColor: props.color === undefined ? "#a5d6a7": props.color  
+                }
+            ]}>
             <Text style={styles.textStyle}>{props.title}</Text>
         </TouchableOpacity>
     )          
