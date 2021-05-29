@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaView, View, Text, StyleSheet } from "react-native";
-import MyButton from "./components/Button";
+import Button from "./components/Button";
 
 const App = () => {
     return (
@@ -8,7 +8,16 @@ const App = () => {
             <View>
                 <Text style={{ fontSize: 50 }}>Hello World </Text>
             </View>
-            <MyButton />
+            <Button 
+                title="Press Me"
+            />
+            <Button 
+                title="Press Me too"
+            />
+            <Button 
+                title="Dont press Me"
+                color="red"
+            />
         </SafeAreaView>
     )
 }
