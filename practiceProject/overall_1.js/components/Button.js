@@ -2,12 +2,7 @@ import React from "react";
 import { SafeAreaView, View, TouchableOpacity, Text, StyleSheet  } from "react-native";
 
 const Button = (props) => {
-    // let selectedColor = props.color;
-
-    // if(props.color === undefined){
-    //     selectedColor = "#a5d6a7"
-    // }
-
+  
     return (
         <TouchableOpacity style={
             [
@@ -15,7 +10,9 @@ const Button = (props) => {
                 {
                     backgroundColor: props.color === undefined ? "#a5d6a7": props.color  
                 }
-            ]}>
+            ]}
+            onPress={props.sayingHello}
+            >
             <Text style={styles.textStyle}>{props.title}</Text>
         </TouchableOpacity>
     )          
