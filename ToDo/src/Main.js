@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SafeAreaView, Text, View, FlatList } from 'react-native';
 import { main } from "./styles"
-import TodoInput from "./components/TodoInput"
+import { TodoInput, TodoCard } from "./components"
 
 /**
  * #303e45
@@ -20,7 +20,7 @@ const Main = () => {
             todo: text,
             isDone: false
         }
-        const newArray = [...list]
+        const newArray = [element, ...list]
         newArray.push(element)
 
         //console.log(newArray);
@@ -36,7 +36,7 @@ const Main = () => {
                 </View>
                 <FlatList 
                     data={list}
-                    renderItem={(item) => null}
+                    renderItem={() => null}
                 />
                 <TodoInput 
                     onTodoEnter = {todoText => addTodo(todoText)}

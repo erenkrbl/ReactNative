@@ -22,4 +22,4 @@ const TodoInput = (props) => {
     )
 }
 
-export default TodoInput;
+export { TodoInput };
