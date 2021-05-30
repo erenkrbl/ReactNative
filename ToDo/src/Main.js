@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, Text, View } from 'react-native';
+import styles from "./styles"
 
 /**
  * #303e45
@@ -10,8 +11,8 @@ import { SafeAreaView, Text, View } from 'react-native';
 
 const Main = () => {
     return (
-        <SafeAreaView style={{flex: 1}}>
-            <View style={{flex: 1}}>
+        <SafeAreaView style={styles.container}>
+            <View style={styles.container}>
                 <Text>TODO</Text>
             </View>
         </SafeAreaView>
