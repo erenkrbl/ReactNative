@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { SafeAreaView, View, Text, FlatList, StyleSheet, Alert, TextInput } from "react-native";
 import productData from "./product_data.json";
 
-import { ProductCard } from "./components"
+import { ProductCard, SearchBar } from "./components"
 
 
 const App = () => {
@@ -32,12 +32,16 @@ const App = () => {
         <SafeAreaView style={{flex: 1}}>
             <View style={{flex: 1}}>
                 <Text style={styles.banner}>Our Shop</Text>
-                <View style={styles.searchBar}>
+                {/* <View style={styles.searchBar}>
                     <TextInput 
                         placeholder="Enter a product"
                         onChangeText= {(value) => setSearchValue(value)}
                     />
-                </View>
+                </View> */}
+
+                <SearchBar 
+                    onSearch={(value) => setSearchValue(value)}
+                />
                 <FlatList
                     keyExtractor={(item, index) => index.toString()}
                     data= {displayList}
@@ -51,7 +55,7 @@ const App = () => {
 
 /**
  * todo
- * 1-stock durumu belirtilecek
+ * 1-stock durumu belirtilecek (yapıldı)
  * 2-seacrh bar component oluşturulacak
  * <SeaechBar onSearch={....} />
  */
@@ -65,10 +69,10 @@ const styles = StyleSheet.create({
         fontSize: 40,
         textAlign: 'center'   
     },
-    searchBar : {
-        backgroundColor: '#eceff1',
-        padding: 5,
-        margin: 10,
-        borderRadius: 10
-    }
+    // searchBar : {
+    //     backgroundColor: '#eceff1',
+    //     padding: 5,
+    //     margin: 10,
+    //     borderRadius: 10
+    // }
 })
