@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TextInput } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity  } from 'react-native';
 import { todo_input} from '../styles'
 
 const TodoInput = (props) => {
@@ -7,10 +7,12 @@ const TodoInput = (props) => {
         <View style={todo_input.container}>
             <View style={todo_input.inputContainer}>
                 <TextInput 
-                    placeholder='Enter a toDo'
+                    placeholder='Type something to do...'
                 />
             </View>
-            <Text>Todo Input</Text>
+            <TouchableOpacity style={todo_input.buttonContainer}>
+                <Text style={todo_input.buttonText}>Add ToDo</Text>
+            </TouchableOpacity>
         </View>
     )
 }
