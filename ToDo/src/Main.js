@@ -19,7 +19,7 @@ const Main = () => {
                     <Text style={main.todoCount}>10</Text>
                 </View>
                 <TodoInput 
-                
+                    onTodoEnter = {todoText => alert(todoText)}
                 />
             </View>
         </SafeAreaView>
