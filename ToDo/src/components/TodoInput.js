@@ -1,9 +1,15 @@
 import React from 'react';
 import { Text, View, TextInput } from 'react-native';
+import { todo_input} from '../styles'
 
 const TodoInput = (props) => {
     return (
-        <View>
+        <View style={todo_input.container}>
+            <View style={todo_input.inputContainer}>
+                <TextInput 
+                    placeholder='Enter a toDo'
+                />
+            </View>
             <Text>Todo Input</Text>
         </View>
     )
