@@ -13,7 +13,10 @@ const Main = () => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.container}>
-                <Text>TODO</Text>
+                <View style={styles.banner}>
+                    <Text style={styles.todoText}>ToDo</Text>
+                    <Text style={styles.todoCount}>10</Text>
+                </View>
             </View>
         </SafeAreaView>
     );
