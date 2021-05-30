@@ -20,6 +20,7 @@ const ProductCard = ({product}) => {
             <View style={{flex: 1, justifyContent: 'space-between'}}>
                 <Text>{product.title}</Text>
                 <Text style={{fontWeight: 'bold'}}>{product.price}</Text>
+                {!product.inStock && <Text style={{color: 'red', fontWeight: 'bold'}}>Out of stock</Text>}
             </View>
         </View>
     )
