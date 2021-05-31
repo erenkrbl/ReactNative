@@ -7,13 +7,13 @@ const TodoCard = (props) => {
         <TouchableOpacity 
             style={todo_card.container}
             onPress={() => props.onDone()} // onPress={() => props.onDone(props.data.id)}
+            onLongPress={() => props.onRemove()}
         >
             <Text 
             style={[
                 todo_card.text,
                 { textDecorationLine : props.data.isDone ? 'line-through' : null}
-            ]}
-            >{props.data.todo}</Text>
+            ]}>{props.data.todo}</Text>
         </TouchableOpacity>
     )
 }

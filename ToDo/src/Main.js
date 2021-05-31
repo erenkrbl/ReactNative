@@ -30,10 +30,21 @@ const Main = () => {
 
     function doneTodo(todoId) {
         const newArray = [...list];
-        const todoIndex = newArray.findIndex(item => item.id = todoId);
-        newArray(todoIndex).isDone = !newArray(todoIndex).isDone;
+        const todoIndex = newArray.findIndex(item => item.id == todoId);
+        newArray[todoIndex].isDone = !newArray[todoIndex].isDone;
         
         setList(newArray)
+    }
+
+    function removeTodo(todoId) {
+        const newArray = [...list];
+        const todoIndex = list.findIndex(t => t.id == todoId);
+        // console.log("todoId: " + todoId);
+        // console.log(newArray)
+
+        newArray.splice(todoIndex, 1);
+        setList(newArray)
+
     }
 
     const renderTodo = ({item}) => {
@@ -41,6 +52,7 @@ const Main = () => {
             <TodoCard 
                 data={item}
                 onDone={() => doneTodo(item.id)} // onDone={(id) => doneTodo(id)}
+                onRemove= {() => removeTodo(item.id)}
             />
         )
     } 
@@ -51,7 +63,7 @@ const Main = () => {
             <KeyboardAvoidingView style={main.container}>
                 <View style={main.banner}>
                     <Text style={main.todoText}>ToDo</Text>
-                    <Text style={main.todoCount}>{list.length}</Text>
+                    <Text style={main.todoCount}>{list.filter(t => t.isDone === false).length}</Text>
                 </View>
                 <FlatList
                     keyExtractor={(item, index) => {index.toString()}} 
