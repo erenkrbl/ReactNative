@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, Text, View, FlatList } from 'react-native';
+import { SafeAreaView, Text, View, FlatList, KeyboardAvoidingView } from 'react-native';
 import { main } from "./styles"
 import { TodoInput, TodoCard } from "./components"
 
@@ -28,24 +28,41 @@ const Main = () => {
 
     }
 
-    const renderTodo = ({item}) => <TodoCard data={item} />
+    function doneTodo(todoId) {
+        const newArray = [...list];
+        const todoIndex = newArray.findIndex(item => item.id = todoId);
+        newArray(todoIndex).isDone = !newArray(todoIndex).isDone;
+        
+        setList(newArray)
+    }
+
+    const renderTodo = ({item}) => {
+        return (
+            <TodoCard 
+                data={item}
+                onDone={() => doneTodo(item.id)} // onDone={(id) => doneTodo(id)}
+            />
+        )
+    } 
     
 
     return (
         <SafeAreaView style={main.container}>
-            <View style={main.container}>
+            <KeyboardAvoidingView style={main.container}>
                 <View style={main.banner}>
                     <Text style={main.todoText}>ToDo</Text>
                     <Text style={main.todoCount}>{list.length}</Text>
                 </View>
-                <FlatList 
+                <FlatList
+                    keyExtractor={(item, index) => {index.toString()}} 
                     data={list}
                     renderItem={renderTodo}
+                    ListEmptyComponent={() => <Text style={main.emptyComponent}>Nothing to do..</Text>}
                 />
                 <TodoInput 
                     onTodoEnter = {todoText => addTodo(todoText)}
                 />
-            </View>
+            </KeyboardAvoidingView>
         </SafeAreaView>
     );
 }

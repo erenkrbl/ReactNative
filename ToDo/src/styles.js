@@ -20,6 +20,10 @@ const main = StyleSheet.create({
         color: '#ff9b31',
         fontSize: 35,
         fontWeight: 'bold'
+    },
+    emptyComponent: {
+        color: 'white',
+        textAlign: 'center'
     }  
 })
 
