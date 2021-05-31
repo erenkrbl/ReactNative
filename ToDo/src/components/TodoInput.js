@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import { Text, View, TextInput, TouchableOpacity  } from 'react-native';
 import { todo_input} from '../styles'
 

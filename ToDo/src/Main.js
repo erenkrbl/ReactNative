@@ -21,22 +21,26 @@ const Main = () => {
             isDone: false
         }
         const newArray = [element, ...list]
-        newArray.push(element)
+        // newArray.push(element)
 
         //console.log(newArray);
         setList(newArray)
 
     }
+
+    const renderTodo = ({item}) => <TodoCard data={item} />
+    
+
     return (
         <SafeAreaView style={main.container}>
             <View style={main.container}>
                 <View style={main.banner}>
                     <Text style={main.todoText}>ToDo</Text>
-                    <Text style={main.todoCount}>10</Text>
+                    <Text style={main.todoCount}>{list.length}</Text>
                 </View>
                 <FlatList 
                     data={list}
-                    renderItem={() => null}
+                    renderItem={renderTodo}
                 />
                 <TodoInput 
                     onTodoEnter = {todoText => addTodo(todoText)}
