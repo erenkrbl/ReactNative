@@ -13,9 +13,14 @@ const Stack = createStackNavigator();
 function Router() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="FirstPAge" component={First} />
-        <Stack.Screen name="SecondPAge" component={Second} />
+      <Stack.Navigator
+        screenOptions={{
+            headerShown: false,
+            gestureEnabled: true
+        }}
+      >
+        <Stack.Screen name="FirstPage" component={First} options= {{title: 'Send'}} />
+        <Stack.Screen name="SecondPage" component={Second} />
       </Stack.Navigator>
     </NavigationContainer>
   );
