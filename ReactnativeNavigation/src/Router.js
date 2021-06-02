@@ -1,27 +1,44 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { SafeAreaView, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import First from './pages/First';
-import Second from './pages/Second';
+
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const First = () =>{
+  return (
+    <SafeAreaView>
+      <View>
+        <Text>First</Text>
+      </View>
+    </SafeAreaView>
+  )
+}
+
+const Second = () =>{
+  return (
+    <SafeAreaView>
+      <View>
+        <Text>Second</Text>
+      </View>
+    </SafeAreaView>
+  )
+}
 
 function Router() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-            headerShown: false,
-            gestureEnabled: true
-        }}
-      >
-        <Stack.Screen name="FirstPage" component={First} options= {{title: 'Send'}} />
-        <Stack.Screen name="SecondPage" component={Second} />
-      </Stack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name='First Page' component={First} />
+        <Tab.Screen name='Second Page' component={Second} />
+        
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
