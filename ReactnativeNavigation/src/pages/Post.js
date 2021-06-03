@@ -1,11 +1,15 @@
 import React from 'react';
-import { SafeAreaView, Text, View } from 'react-native';
+import { SafeAreaView, Text, View, Button  } from 'react-native';
 
-const Post = () =>{
+const Post = (props) =>{
     return (
       <SafeAreaView>
         <View>
-          <Text>Post</Text>
+          <Text style={{fontSize:40}}>Post</Text>
+          <Button 
+            title='Back'
+            onPress={() => props.navigation.goBack('Main')}
+          />
         </View>
       </SafeAreaView>
     )
