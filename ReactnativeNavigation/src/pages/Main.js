@@ -44,7 +44,7 @@ const Main = (props) =>{
 
   const renderPostData = ({item}) =>{
     return (
-      <PostCard post={item}/>
+      <PostCard post={item} onSelected={() => props.navigation.navigate('PostPage', { selectedPost: item })}/>
     )
   }
     return (

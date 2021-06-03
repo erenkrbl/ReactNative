@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Text, View, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { Image, Text, View, TouchableOpacity, TouchableWithoutFeedback, StyleSheet, Dimensions } from 'react-native';
 
 // {
 //     "id": 0,
@@ -11,16 +11,20 @@ import { Image, Text, View, TouchableOpacity, StyleSheet, Dimensions } from 'rea
 
 const PostCard = (props) =>{
     return (
-      <TouchableOpacity>
-        <Image
-            style={styles.image} 
-            source={{uri: props.post.img}}
-        />
-        <View style={styles.footerContainer}>
-            <Text style={styles.title}>{props.post.userName}</Text>
-            <Text>{props.post.description}</Text>
-        </View>
-      </TouchableOpacity>
+        <TouchableWithoutFeedback
+            onPress={() => props.onSelected()}
+        >
+            <View>
+                <Image
+                    style={styles.image} 
+                    source={{uri: props.post.img}}
+                />
+                <View style={styles.footerContainer}>
+                    <Text style={styles.title}>{props.post.userName}</Text>
+                    <Text numberOfLines={2}>{props.post.description}</Text>
+                </View>
+            </View>
+        </TouchableWithoutFeedback>
     )
   }
 
