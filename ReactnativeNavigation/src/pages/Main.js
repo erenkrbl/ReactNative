@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, Text, View, Button } from 'react-native';
+import { SafeAreaView, Text, View, Button, FlatList } from 'react-native';
 import PostCard from '../components/PostCard';
 
 const post_data = [
@@ -41,13 +41,20 @@ const post_data = [
 ]
 
 const Main = (props) =>{
+
+  const renderPostData = ({item}) =>{
+    return (
+      <PostCard post={item}/>
+    )
+  }
     return (
       <SafeAreaView>
         <View>
-          <Text style={{fontSize:40}}>Main</Text>
-          <Button 
-            title='Go!'
-            onPress={() => props.navigation.navigate('PostPage')}
+          <FlatList 
+            keyExtractor={(_, index) => index.toString()}
+            data={post_data}
+            renderItem={renderPostData}
+            ItemSeparatorComponent={() => <View style={{ borderWidth : 1, marginVertical: 5, borderColor: '#bdbdbd'}}/>}
           />
         </View>
       </SafeAreaView>
