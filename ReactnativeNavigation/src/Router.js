@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 
 function MainComponent () {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName='MainPage'>
       <Stack.Screen name='MainPage' component={Main} />
       <Stack.Screen name='PostPage' component={Post} />
     </Stack.Navigator>
@@ -23,7 +23,7 @@ function MainComponent () {
 function Router() {
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName='PostPage' tabBarOptions={{activeTintColor: 'red'}}>
+      <Tab.Navigator initialRouteName='MainComponentPage' tabBarOptions={{activeTintColor: 'red'}}>
         <Tab.Screen name='FriendsPage' component={Friends} options={{title: 'Friends'}} />
         <Tab.Screen name='MainComponentPage' component={MainComponent} options={{title: 'Main'}} />
       </Tab.Navigator>
