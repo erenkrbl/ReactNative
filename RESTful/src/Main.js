@@ -4,21 +4,27 @@ import { SafeAreaView, View, Text, Button } from 'react-native';
 
 const Main = (props) => {
 
-    const fetchData = () => {
+    const fetchDataThen = () => {
+        let myData = [];
+        console.log("Starting Fetch..")
+
         axios.get('https://jsonplaceholder.typicode.com/users')
             .then((response) => {
                 console.log(response)
+                myData = response.data;
             })
             .catch((error) => {
                 console.log(error)
             })
+        console.log(myData);
+        console.log("End Fetch...")
 
     }
     return (
         <SafeAreaView>
             <View>
                 <Text>Main</Text>
-                <Button title="Fetch Data" onPress={fetchData}/>
+                <Button title="Fetch Data" onPress={fetchDataThen}/>
             </View>
         </SafeAreaView>
     )
