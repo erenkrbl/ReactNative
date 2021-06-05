@@ -16,18 +16,18 @@ const RestaurantCard = (props) => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.headerText}>Salt Curry</Text>       
+                <Text style={styles.headerText}>{props.item.name}</Text>       
             </View>
             
-            <Text style={styles.typeText}>Comfort food</Text>       
+            <Text style={styles.typeText}>{props.item.type}</Text>     
             
             <Image
                 style={styles.logo}
-                source={{uri: "https://loremflickr.com/500/500/restaurant"}}
+                source={{uri: props.item.logo}}
             />
-            <Text style={styles.description}>"To ensure that each guest receives prompt, professional, friendly and courteous service. To maintain a clean, comfortable and well maintained premises for our guests and staff. To provide at a fair price – nutritional, well-prepared meals – using only quality ingredients. To ensure that all guests and staff are treated with the respect and dignity they deserve. To thank each guest for the opportunity to serve them. By maintaining these objectives we shall be assured of a fair profit that will allow us to contribute to the community we serve."</Text>
+            <Text style={styles.description}>{props.item.description}</Text>
 
-            <Text style={styles.review}>"Ambience was good, service was no nonsense but friendly."</Text>
+            <Text style={styles.review}>{props.item.review}</Text>
 
         </View>  
     )
