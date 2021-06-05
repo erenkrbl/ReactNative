@@ -1,13 +1,15 @@
 import axios from 'axios';
 import React from 'react';
-import { SafeAreaView, View, Text, Tou } from 'react-native';
-import Button from './components/Button';
+import { SafeAreaView, View, Text } from 'react-native';
+
+import { Button, RestaurantCard } from './components';
 
 const Main = (props) => {
     
     return (
-        <SafeAreaView>
-            <View>
+        <SafeAreaView style={{flex:1}}>
+            <View style={{flex:1}}>
+                <RestaurantCard />
                 <Button
                     title="Suggest New Restaurant"
                 />

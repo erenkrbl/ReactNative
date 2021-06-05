@@ -9,7 +9,7 @@ const Button = (props) => {
     )
 }
 
-export default Button;
+export { Button };
 
 const styles = StyleSheet.create({
     container : {
