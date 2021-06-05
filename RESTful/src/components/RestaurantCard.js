@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image } from 'react-native';
 
 // id: 1301,
 // uid: "ecd528e8-b909-466f-9039-fe590e5a8d3d",
@@ -18,6 +18,17 @@ const RestaurantCard = (props) => {
             <View style={styles.header}>
                 <Text style={styles.headerText}>Salt Curry</Text>       
             </View>
+            
+            <Text style={styles.typeText}>Comfort food</Text>       
+            
+            <Image
+                style={styles.logo}
+                source={{uri: "https://loremflickr.com/500/500/restaurant"}}
+            />
+            <Text style={styles.description}>"To ensure that each guest receives prompt, professional, friendly and courteous service. To maintain a clean, comfortable and well maintained premises for our guests and staff. To provide at a fair price – nutritional, well-prepared meals – using only quality ingredients. To ensure that all guests and staff are treated with the respect and dignity they deserve. To thank each guest for the opportunity to serve them. By maintaining these objectives we shall be assured of a fair profit that will allow us to contribute to the community we serve."</Text>
+
+            <Text style={styles.review}>"Ambience was good, service was no nonsense but friendly."</Text>
+
         </View>  
     )
 }
@@ -37,5 +48,24 @@ const styles = StyleSheet.create({
     headerText: {
         fontWeight: 'bold',
         fontSize: 25
+    },
+    typeText: {
+        fontStyle: 'italic',
+        fontSize: 20,
+        fontWeight: 'bold',
+        alignSelf: 'center'
+    },
+    logo: {
+        height: Dimensions.get('window').height / 3
+    },
+    description: {
+        fontWeight: 'bold',
+        margin: 5
+
+    },
+    review: {
+        fontStyle: 'italic',
+        fontWeight: 'bold',
+        fontSize: 17
     }
 })
