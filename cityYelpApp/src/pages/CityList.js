@@ -15,7 +15,7 @@ const CityList = (props) => {
     //ASYNC-AWAİT
 
     const fetchCityData = async () => {
-        const { data } = await axios.get('https://opentable.herokuapp.com/api/cities');
+        const { data } = await axios.get('http://opentable.herokuapp.com/api/cities');
         setCityList(data.cities);
         originalList = [...data.cities]
         // setOriginalList(data.cities)
@@ -25,7 +25,15 @@ const CityList = (props) => {
         fetchCityData();
     }, [])
 
-    const renderCities = ({item}) => <CityItem cityName={item} />
+    const renderCities = ({item}) => {
+        return (
+        
+            <CityItem 
+                cityName={item}
+                onSelect={() => props.navigation.navigate('Restaurants', {selectedCity: item})}  
+            /> 
+        )
+    }
 
     const renderSeparator = () => <Viev style={{ borderWidth: 1, borderColor: '#e0e0e0' }} />
 
