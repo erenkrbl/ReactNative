@@ -9,9 +9,8 @@ const CityList = (props) => {
     //ASYNC-AWAİT
 
     const fetchCityData = async () => {
-        const response = await axios.get("https://opentable.herokuapp.com/api/cities");
-        //setCityList(data.cities);
-        console.log(response)
+        const {data } = await axios.get('https://opentable.herokuapp.com/api/cities');
+        setCityList(data.cities);
     }
 
     useEffect(() => {
@@ -23,7 +22,9 @@ const CityList = (props) => {
     return (
         <SafeAreaView>
             <View>
+                
                 <FlatList
+                    keyExtractor={(_, index) => index.toString()}
                     data={cityList}
                     renderItem={renderCities}
                 />
