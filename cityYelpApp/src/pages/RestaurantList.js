@@ -34,6 +34,7 @@ const RestaurantList = (props) => {
         return (
             <RestaurantItem 
                 restaurant={item}
+                onSelect={()=> props.navigation.navigate('Details', {selectedRestaurant: item})}
             />
         )
     }
@@ -53,7 +54,7 @@ const RestaurantList = (props) => {
         <SafeAreaView style={{flex:1}}>
             <View style={{flex:1}}>
                 <View>
-                    <Text style={{margin: 5, fontWeight: 'bold', fontSize: 40}}>{selectedCity}</Text>
+                    <Text style={{margin: 5, fontWeight: 'bold', fontSize: 30}}>{selectedCity}</Text>
                     <SearchBar 
                         placeholder="Search for a restaurant..."
                         onSearch={(value) => searchRestaurant(value)} 
